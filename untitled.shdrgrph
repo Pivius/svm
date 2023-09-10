@@ -1,0 +1,95 @@
+{
+  "Model": null,
+  "Description": "",
+  "BlendMode": "Opaque",
+  "nodes": [
+    {
+      "_class": "Result",
+      "Albedo": {
+        "Identifier": "1",
+        "Output": "Result"
+      },
+      "Emission": {
+        "Identifier": "2",
+        "Output": "Result"
+      },
+      "Opacity": {
+        "Identifier": "3",
+        "Output": "Result"
+      },
+      "TintMask": {
+        "Identifier": "4",
+        "Output": "Result"
+      },
+      "Normal": {
+        "Identifier": "5",
+        "Output": "Result"
+      },
+      "Roughness": {
+        "Identifier": "6",
+        "Output": "Result"
+      },
+      "Metalness": {
+        "Identifier": "7",
+        "Output": "Result"
+      },
+      "AmbientOcclusion": {},
+      "Sheen": {},
+      "SheenRoughness": {},
+      "Clearcoat": {},
+      "ClearcoatRoughness": {},
+      "ClearcoatNormal": {},
+      "Anisotropy": {},
+      "AnisotropyRotation": {},
+      "Thickness": {},
+      "SubsurfacePower": {},
+      "SheenColor": {},
+      "SubsurfaceColor": {},
+      "Transmission": {},
+      "Absorption": {},
+      "IndexOfRefraction": {},
+      "MicroThickness": {},
+      "Identifier": "0",
+      "Position": "192,-288"
+    },
+    {
+      "_class": "ViewDirection",
+      "Identifier": "1",
+      "Position": "-272,-288"
+    },
+    {
+      "_class": "TextureCoord",
+      "UseSecondaryCoord": false,
+      "Tiling": "1,1",
+      "Identifier": "2",
+      "Position": "-272,-240"
+    },
+    {
+      "_class": "ScreenPosition",
+      "Identifier": "3",
+      "Position": "-272,-192"
+    },
+    {
+      "_class": "WorldNormal",
+      "Identifier": "4",
+      "Position": "-272,-144"
+    },
+    {
+      "_class": "WorldPosition",
+      "Identifier": "5",
+      "Position": "-272,-96"
+    },
+    {
+      "_class": "DotProduct",
+      "InputA": {},
+      "InputB": {},
+      "Identifier": "6",
+      "Position": "-272,-48"
+    },
+    {
+      "_class": "Time",
+      "Identifier": "7",
+      "Position": "-272,32"
+    }
+  ]
+}

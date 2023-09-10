@@ -1,0 +1,206 @@
+﻿@using System;
+@using Sandbox;
+@using System.Collections.Generic;
+@using Sandbox.UI;
+@using SvM.UI.Settings;
+
+@namespace SvM.UI
+@attribute [StyleSheet( "/UI/Menu.scss" )]
+@inherits Panel
+
+<root class="menu">
+    <div class="title"> Spies VS Mercs </div>
+    <div class="upper-section">
+        <div class="left-section">
+            <div class="player-list-title">Spies</div>
+            <ul class="player-list">
+                @foreach (var player in SvMGame.Spies.Players)
+                {
+                    <li class="player-info">
+                        <div class="@IsReady(player)">@player.Name</div>
+                    </li>
+                }
+            </ul>
+        </div>
+
+        <div class="middle-section">
+            <button @onclick=@((PanelEvent e) => SwitchTeam(e))>Switch Team</button>
+            <button>Equipment</button>
+            <button @onclick=@((PanelEvent e) => ReadyUp(e))>Ready</button>
+            @if ( SvMGame.IsAllReady() && Game.LocalClient.IsListenServerHost )
+            {
+                <button @onclick=@((PanelEvent e) => StartGame(e))>Start Game</button>
+            }
+        </div>
+
+        <div class="right-section">
+            <div class="player-list-title">Mercenaries</div>
+            <ul class="player-list">
+                @foreach (var player in SvM.SvMGame.Mercs.Players)
+                {
+                    <li class="player-info">
+                        <div class="@IsReady(player)">@player.Name</div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+
+    <div class="lower-section">
+        <div class="left-section">
+            <div class="game-settings">Game Settings</div>
+            <ul class="settings-list" @ref=Settings></ul>
+        </div>
+
+        <div class="right-section">
+            <div class="chat-box">
+                <ul class="chat" @ref=ChatBox>
+                    @foreach (var entry in Chat.ChatMessages)
+                    {
+                        <li class="chat-entry">
+                            <div class="name">@entry.Name:</div>
+                            <div class="message">@entry.Message</div>
+                        </li>
+                    }
+                </ul>
+
+                <div class="chat-input">
+                    <h1>Say: </h1>
+                    <textentry type="text" @onsubmit=@(( PanelEvent e ) => AddChatEntry(e))></textentry>
+                </div>
+            </div>
+        </div>
+    </div>
+</root>
+
+@code
+{
+
+    public List<BaseSettings> GameSettings;
+    public Panel ChatBox;
+    public Panel Settings;
+    public bool UpdateUI;
+    public int ChatEntries = 0;
+
+    public Menu()
+    {
+        GameSettings = new List<BaseSettings>();
+
+        GameSettings.Add( new SliderSettings( "svm_spy_life", "Spy Life", 1, 1, 10 ) );
+        GameSettings.Add( new SliderSettings( "svm_merc_life", "Merc Life", 1, 1, 10 ) );
+        GameSettings.Add( new SliderSettings( "svm_game_length", "Game Length", 1, 1, 20 ) );
+        GameSettings.Add( new SliderSettings( "svm_respawn_time", "Respawn Time", 0.1f, 0, 60 ) );
+        GameSettings.Add( new DropDownSettings( "svm_game_mode", "Gamemodes", new string[]
+            {
+                "Normal",
+                "Hack",
+                "Deathmatch",
+                "Extract"
+            }, SvMGame.GameModes
+        ));
+    }
+
+    public void AddChatEntry(PanelEvent e)
+    {
+        var name = Game.LocalClient.Name;
+        var message = e.Value;
+
+        if (message != "")
+        {
+            e.This.SetProperty("Text", "");
+            e.This.Focus();
+            Chat.NetChatEntry(name, (string)message);
+        }
+    }
+
+    [Event( "svm.chatentry" )]
+    public void OnChatEntry()
+    {
+        UpdateUI = true;
+    }
+
+
+    public void SwitchTeam(PanelEvent e)
+    {
+        var client = Game.LocalClient;
+        SvMGame.NetSwitchTeam(client.Id);
+    }
+
+    [Event( "svm.teamSwitch" )]
+    public void OnTeamSwitch()
+    {
+        UpdateUI = true;
+    }
+
+    public void ReadyUp(PanelEvent e)
+    {
+        var client = Game.LocalClient;
+
+        SvMGame.NetReadyUp(client.Id);
+    }
+
+    [Event("svm.ready")]
+    public void OnReady()
+    {
+        UpdateUI = true;
+    }
+
+    public void StartGame(PanelEvent e)
+    {
+        var client = Game.LocalClient;
+        SvMGame.NetStartGame();
+    }
+
+    public string IsReady(IClient client)
+    {
+        if ( SvMGame.IsReady( client ) )
+        {
+            return "player-name-ready";
+        }
+
+        return "player-name";
+    }
+
+    public override void Tick()
+    {
+        if (UpdateUI)
+            UpdateUI = false;
+
+        Style.PointerEvents = PointerEvents.All;
+
+        foreach (var setting in GameSettings)
+        {
+            setting.Tick();
+        }
+    }
+
+
+    protected override void OnAfterTreeRender(bool firstTime)
+    {
+        if ( firstTime )
+        {
+            ChatBox.PreferScrollToBottom = true;
+
+            foreach (var settings in GameSettings)
+            {
+                Panel settingPanel = new();
+                Label name = new();
+
+                settingPanel.AddClass("settings-panel");
+
+                name.Text = settings.Name;
+                name.AddClass("settings-name");
+
+                settingPanel.AddChild(name);
+                settingPanel.AddChild(settings.Panel);
+
+                Settings.AddChild(settingPanel);
+            }
+        }
+
+    }
+    protected override int BuildHash()
+    {
+        return HashCode.Combine(UpdateUI);
+    }
+}

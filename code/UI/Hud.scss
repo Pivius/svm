@@ -1,0 +1,31 @@
+﻿rootpanel {
+    background-color: rgba( #333, 0 );
+    transition: background-color 0.2s ease-in;
+    transform-origin: 50% 50%;
+
+}
+
+.popup-panel {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    position:absolute;
+    align-items: center;
+}
+
+.popup-panel .button {
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    background-color: rgb(26, 31, 28);
+    color: rgb(157, 209, 158);
+    width: 15vh;
+}
+
+.popup-panel .button:hover {
+    background-color: rgb(65, 68, 66);
+}
+
+.popup-panel .active {
+    background-color: rgb(79, 90, 84);
+}

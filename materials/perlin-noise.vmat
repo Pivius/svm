@@ -1,0 +1,11 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "code/shaders/screen-noise.shader"
+
+	//---- Noise ----
+	_NoiseOpacity "0.005"
+	_NoiseScale "1.000"
+	_NoiseSpeed "2.000"
+}

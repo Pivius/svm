@@ -1,0 +1,1720 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc29:version{3cec427c-1b0e-4d48-a90a-0436f33a6041} -->
+{
+	rootNode = 
+	{
+		_class = "RootNode"
+		children = 
+		[
+			{
+				_class = "AnimConstraintList"
+				children = 
+				[
+					{
+						_class = "Prefab"
+						target_file = "models/citizen/prefabs/citizen_animconstraintlist.vmdl_prefab"
+					},
+				]
+			},
+			{
+				_class = "ModelModifierList"
+				children = 
+				[
+					{
+						_class = "ModelModifier_ScaleAndMirror"
+						note = "We\'re working in centimeters at the source (which makes more sense for us), and then letting the engine take care of the conversion to inches at this step. So if you want to create something for the Citizen (like clothing), you should also model it in centimeters (matching the provided source files), and use a ScaleAndMirror modifier at 0.3937."
+						scale = 0.3937
+						mirror_x = false
+						mirror_y = false
+						mirror_z = false
+						flip_bone_forward = false
+						swap_left_and_right_bones = false
+					},
+				]
+			},
+			{
+				_class = "MaterialGroupList"
+				children = 
+				[
+					{
+						_class = "Prefab"
+						note = "These skins are now here only for preview purposes. Your gamemode should be using citizen.SetMaterialOverride"
+						target_file = "models/citizen/prefabs/citizen_materialgrouplist.vmdl_prefab"
+					},
+				]
+			},
+			{
+				_class = "RenderMeshList"
+				children = 
+				[
+					{
+						_class = "Prefab"
+						target_file = "models/citizen/prefabs/citizen_rendermeshlist.vmdl_prefab"
+					},
+				]
+			},
+			{
+				_class = "AnimationList"
+				children = 
+				[
+					{
+						_class = "Prefab"
+						target_file = "models/citizen/prefabs/citizen_animationlist.vmdl_prefab"
+					},
+					{
+						_class = "Prefab"
+						target_file = "models/citizen/prefabs/citizen_animationlist_unicycle.vmdl_prefab"
+					},
+					{
+						_class = "Prefab"
+						disabled = true
+						target_file = "models/citizen/prefabs/citizen_animationlist_debug.vmdl_prefab"
+					},
+					{
+						_class = "Folder"
+						name = "SvM"
+						children = 
+						[
+							{
+								_class = "AnimFile"
+								name = "Fast_Roll"
+								children = 
+								[
+									{
+										_class = "AnimAlign"
+										align_tx = true
+										align_ty = true
+										align_tz = false
+										align_rx = false
+										align_ry = false
+										align_rz = false
+										align_frame_type = "FirstFrame"
+										frame = 0
+										align_to_anim = "IdlePose_Default"
+										align_to_frame_type = "FirstFrame"
+										align_to_frame = 0
+										bone = "pelvis"
+									},
+									{
+										_class = "ExtractMotion"
+										extract_tx = true
+										extract_ty = true
+										extract_tz = false
+										extract_rz = false
+										linear = true
+										quadratic = false
+										root_bone_name = "pelvis"
+										motion_type = "Single"
+									},
+									{
+										_class = "AnimEvent"
+										event_class = "AE_GENERIC_EVENT"
+										event_frame = 40
+										event_keys = 
+										{
+											TypeName = "end_roll"
+											Int = 0
+											Float = 0.0
+											Vector = [ 0.0, 0.0, 0.0 ]
+											StringData = ""
+										}
+									},
+								]
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = false
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								source_filename = "citizen/animations/custom/svm@fast_roll.fbx"
+								start_frame = -1
+								end_frame = 40
+								framerate = -1.0
+								take = 0
+								reverse = false
+							},
+							{
+								_class = "AnimFile"
+								name = "Crouch_Roll"
+								children = 
+								[
+									{
+										_class = "AnimAlign"
+										align_tx = true
+										align_ty = true
+										align_tz = false
+										align_rx = false
+										align_ry = false
+										align_rz = false
+										align_frame_type = "FirstFrame"
+										frame = 0
+										align_to_anim = "IdlePose_Default"
+										align_to_frame_type = "FirstFrame"
+										align_to_frame = 0
+										bone = "pelvis"
+									},
+									{
+										_class = "ExtractMotion"
+										extract_tx = true
+										extract_ty = true
+										extract_tz = false
+										extract_rz = false
+										linear = true
+										quadratic = false
+										root_bone_name = "pelvis"
+										motion_type = "Single"
+									},
+									{
+										_class = "AnimEvent"
+										event_class = "AE_GENERIC_EVENT"
+										event_frame = 45
+										event_keys = 
+										{
+											TypeName = "end_roll"
+											Int = 0
+											Float = 0.0
+											Vector = [ 0.0, 0.0, 0.0 ]
+											StringData = ""
+										}
+									},
+								]
+								activity_name = ""
+								activity_weight = 1
+								weight_list_name = ""
+								fade_in_time = 0.2
+								fade_out_time = 0.2
+								looping = false
+								delta = false
+								worldSpace = false
+								hidden = false
+								anim_markup_ordered = false
+								disable_compression = false
+								source_filename = "citizen/animations/custom/svm@crouch_roll.fbx"
+								start_frame = -1
+								end_frame = 45
+								framerate = -1.0
+								take = 0
+								reverse = false
+							},
+							{
+								_class = "Folder"
+								name = "Pipe"
+								children = 
+								[
+									{
+										_class = "AnimFile"
+										name = "Pipe_Climb_Left"
+										children = 
+										[
+											{
+												_class = "AnimAlign"
+												align_tx = true
+												align_ty = true
+												align_tz = true
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "IdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "pelvis"
+											},
+										]
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = false
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/svm@pipe_climb_left.fbx"
+										start_frame = 0
+										end_frame = 40
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "Pipe_Climb_Right"
+										children = 
+										[
+											{
+												_class = "AnimAlign"
+												align_tx = true
+												align_ty = true
+												align_tz = true
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "IdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "pelvis"
+											},
+										]
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = false
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/svm@pipe_climb_right.fbx"
+										start_frame = 0
+										end_frame = 40
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "Pipe_Climb_Down_Right"
+										children = 
+										[
+											{
+												_class = "AnimAlign"
+												align_tx = false
+												align_ty = true
+												align_tz = false
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "IdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "root_IK"
+											},
+										]
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = false
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/svm@pipe_climb_down_right.fbx"
+										start_frame = 0
+										end_frame = 40
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "Pipe_Climb_Down_Left"
+										children = 
+										[
+											{
+												_class = "AnimAlign"
+												align_tx = false
+												align_ty = true
+												align_tz = false
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "IdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "root_IK"
+											},
+										]
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = false
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/svm@pipe_climb_down_left.fbx"
+										start_frame = 0
+										end_frame = 40
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "Pipe_Down_Right"
+										children = 
+										[
+											{
+												_class = "AnimAlign"
+												align_tx = false
+												align_ty = false
+												align_tz = true
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "IdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "pelvis"
+											},
+											{
+												_class = "ExtractMotion"
+												extract_tx = false
+												extract_ty = false
+												extract_tz = true
+												extract_rz = false
+												linear = true
+												quadratic = false
+												root_bone_name = "pelvis"
+												motion_type = "Single"
+											},
+										]
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = false
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/svm@pipe_down_right.fbx"
+										start_frame = -1
+										end_frame = 20
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "Pipe_Up_Left"
+										children = 
+										[
+											{
+												_class = "ExtractMotion"
+												extract_tx = false
+												extract_ty = false
+												extract_tz = true
+												extract_rz = false
+												linear = true
+												quadratic = false
+												root_bone_name = "pelvis"
+												motion_type = "Single"
+											},
+											{
+												_class = "AnimAlign"
+												align_tx = false
+												align_ty = false
+												align_tz = true
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "IdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "pelvis"
+											},
+										]
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = false
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/svm@pipe_up_left.fbx"
+										start_frame = -1
+										end_frame = 20
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "Pipe_Up_Right"
+										children = 
+										[
+											{
+												_class = "ExtractMotion"
+												extract_tx = false
+												extract_ty = false
+												extract_tz = true
+												extract_rz = false
+												linear = true
+												quadratic = false
+												root_bone_name = "pelvis"
+												motion_type = "Single"
+											},
+											{
+												_class = "AnimAlign"
+												align_tx = false
+												align_ty = false
+												align_tz = true
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "IdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "pelvis"
+											},
+										]
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = false
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/svm@pipe_up_right.fbx"
+										start_frame = -1
+										end_frame = 20
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "Pipe_Down_Left"
+										children = 
+										[
+											{
+												_class = "ExtractMotion"
+												extract_tx = false
+												extract_ty = false
+												extract_tz = true
+												extract_rz = false
+												linear = true
+												quadratic = false
+												root_bone_name = "pelvis"
+												motion_type = "Single"
+											},
+											{
+												_class = "AnimAlign"
+												align_tx = false
+												align_ty = false
+												align_tz = true
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "IdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "pelvis"
+											},
+										]
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = false
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/svm@pipe_down_left.fbx"
+										start_frame = -1
+										end_frame = 20
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "Pipe_Idle_Left"
+										children = 
+										[
+											{
+												_class = "ExtractMotion"
+												extract_tx = false
+												extract_ty = false
+												extract_tz = true
+												extract_rz = false
+												linear = true
+												quadratic = false
+												root_bone_name = "pelvis"
+												motion_type = "Single"
+											},
+											{
+												_class = "AnimAlign"
+												align_tx = false
+												align_ty = false
+												align_tz = true
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "IdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "pelvis"
+											},
+										]
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = true
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/svm@pipe_up_left.fbx"
+										start_frame = -1
+										end_frame = 1
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "Pipe_Idle_Right"
+										children = 
+										[
+											{
+												_class = "ExtractMotion"
+												extract_tx = false
+												extract_ty = false
+												extract_tz = true
+												extract_rz = false
+												linear = true
+												quadratic = false
+												root_bone_name = "pelvis"
+												motion_type = "Single"
+											},
+											{
+												_class = "AnimAlign"
+												align_tx = false
+												align_ty = false
+												align_tz = true
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "IdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "pelvis"
+											},
+										]
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = true
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/svm@pipe_up_right.fbx"
+										start_frame = -1
+										end_frame = 1
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+								]
+							},
+							{
+								_class = "Folder"
+								name = "Hang"
+								children = 
+								[
+									{
+										_class = "AnimFile"
+										name = "Hang_Idle"
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = true
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/hang/svm@hang_idle.fbx"
+										start_frame = -1
+										end_frame = 90
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "Hang_Left"
+										children = 
+										[
+											{
+												_class = "AnimAlign"
+												align_tx = true
+												align_ty = true
+												align_tz = false
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "IdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "pelvis"
+											},
+											{
+												_class = "AnimSmoothLoop"
+												frames_from_start = 3
+												frames_from_end = 3
+											},
+											{
+												_class = "ExtractMotion"
+												extract_tx = false
+												extract_ty = true
+												extract_tz = false
+												extract_rz = false
+												linear = true
+												quadratic = false
+												root_bone_name = "pelvis"
+												motion_type = "Single"
+											},
+											{
+												_class = "AnimEvent"
+												event_class = "AE_GENERIC_EVENT"
+												event_frame = 18
+												event_keys = 
+												{
+													TypeName = "shimmy_finish"
+													Int = 1
+													Float = 0.0
+													Vector = [ 0.0, 0.0, 0.0 ]
+													StringData = ""
+												}
+											},
+										]
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = true
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/hang/svm@hang_left.fbx"
+										start_frame = -1
+										end_frame = 20
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "Hang_Right"
+										children = 
+										[
+											{
+												_class = "AnimAlign"
+												align_tx = true
+												align_ty = true
+												align_tz = false
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "IdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "pelvis"
+											},
+											{
+												_class = "AnimSmoothLoop"
+												frames_from_start = 3
+												frames_from_end = 3
+											},
+											{
+												_class = "ExtractMotion"
+												extract_tx = false
+												extract_ty = true
+												extract_tz = false
+												extract_rz = false
+												linear = true
+												quadratic = false
+												root_bone_name = "pelvis"
+												motion_type = "Single"
+											},
+											{
+												_class = "AnimEvent"
+												event_class = "AE_GENERIC_EVENT"
+												event_frame = 18
+												event_keys = 
+												{
+													TypeName = "shimmy_finish"
+													Int = 0
+													Float = 0.0
+													Vector = [ 0.0, 0.0, 0.0 ]
+													StringData = ""
+												}
+											},
+										]
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = true
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/hang/svm@hang_right.fbx"
+										start_frame = -1
+										end_frame = 20
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "Hang_Climb"
+										children = 
+										[
+											{
+												_class = "AnimAlign"
+												align_tx = true
+												align_ty = true
+												align_tz = true
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "IdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "pelvis"
+											},
+											{
+												_class = "AnimEvent"
+												event_class = "AE_GENERIC_EVENT"
+												event_frame = 84
+												event_keys = 
+												{
+													TypeName = "climb_end"
+													Int = 0
+													Float = 0.0
+													Vector = [ 0.0, 0.0, 0.0 ]
+													StringData = ""
+												}
+											},
+										]
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = false
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/hang/svm@hang_climb.fbx"
+										start_frame = 0
+										end_frame = 84
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "Hang_Climb_Fast"
+										children = 
+										[
+											{
+												_class = "AnimEvent"
+												event_class = "AE_GENERIC_EVENT"
+												event_frame = 42
+												event_keys = 
+												{
+													TypeName = "climb_end"
+													Int = 0
+													Float = 0.0
+													Vector = [ 0.0, 0.0, 0.0 ]
+													StringData = ""
+												}
+											},
+											{
+												_class = "AnimOffset"
+												disabled = true
+												translation = [ -17.0, 0.0, -66.0 ]
+												rotation_xyz = [ 0.0, 0.0, 0.0 ]
+											},
+											{
+												_class = "ExtractMotion"
+												extract_tx = true
+												extract_ty = true
+												extract_tz = true
+												extract_rz = false
+												linear = true
+												quadratic = false
+												root_bone_name = "pelvis"
+												motion_type = "Single"
+											},
+											{
+												_class = "AnimAlign"
+												disabled = true
+												align_tx = true
+												align_ty = true
+												align_tz = true
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "CrouchIdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "pelvis"
+											},
+										]
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = false
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/hang/svm@hang_climb_fast.fbx"
+										start_frame = -1
+										end_frame = 32
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "Hang_Climb_Double"
+										children = 
+										[
+											{
+												_class = "AnimEvent"
+												event_class = "AE_GENERIC_EVENT"
+												event_frame = 60
+												event_keys = 
+												{
+													TypeName = "climb_end"
+													Int = 0
+													Float = 0.0
+													Vector = [ 0.0, 0.0, 0.0 ]
+													StringData = ""
+												}
+											},
+											{
+												_class = "ExtractMotion"
+												extract_tx = true
+												extract_ty = true
+												extract_tz = true
+												extract_rz = false
+												linear = false
+												quadratic = false
+												root_bone_name = "pelvis"
+												motion_type = "Single"
+											},
+											{
+												_class = "AnimAlign"
+												disabled = true
+												align_tx = true
+												align_ty = true
+												align_tz = true
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "CrouchIdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "pelvis"
+											},
+										]
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = false
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/hang/svm@hang_climb_double.fbx"
+										start_frame = 0
+										end_frame = 60
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "Hang_2_Pipe_Right"
+										children = 
+										[
+											{
+												_class = "AnimAlign"
+												align_tx = true
+												align_ty = true
+												align_tz = false
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "IdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "pelvis"
+											},
+											{
+												_class = "ExtractMotion"
+												extract_tx = false
+												extract_ty = true
+												extract_tz = false
+												extract_rz = false
+												linear = true
+												quadratic = false
+												root_bone_name = "pelvis"
+												motion_type = "Single"
+											},
+										]
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = false
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/hang/svm@hang_to_pipe_right.fbx"
+										start_frame = -1
+										end_frame = 30
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "Hang_Climb_Over"
+										children = 
+										[
+											{
+												_class = "AnimAlign"
+												align_tx = true
+												align_ty = true
+												align_tz = true
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "IdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "pelvis"
+											},
+											{
+												_class = "ExtractMotion"
+												extract_tx = true
+												extract_ty = true
+												extract_tz = true
+												extract_rz = false
+												linear = true
+												quadratic = false
+												root_bone_name = "pelvis"
+												motion_type = "Single"
+											},
+											{
+												_class = "AnimAlign"
+												disabled = true
+												align_tx = true
+												align_ty = true
+												align_tz = true
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "CrouchIdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "pelvis"
+											},
+										]
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = false
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/hang/svm@hang_climb_over.fbx"
+										start_frame = 0
+										end_frame = 29
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "Hang_2_Pipe_Left"
+										children = 
+										[
+											{
+												_class = "AnimAlign"
+												align_tx = true
+												align_ty = true
+												align_tz = false
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "IdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "pelvis"
+											},
+											{
+												_class = "ExtractMotion"
+												extract_tx = false
+												extract_ty = true
+												extract_tz = false
+												extract_rz = false
+												linear = true
+												quadratic = false
+												root_bone_name = "pelvis"
+												motion_type = "Single"
+											},
+										]
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = false
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/hang/svm@hang_to_pipe_left.fbx"
+										start_frame = -1
+										end_frame = 30
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "Hang_Climb_Short"
+										children = 
+										[
+											{
+												_class = "AnimAlign"
+												align_tx = true
+												align_ty = true
+												align_tz = true
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "IdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "pelvis"
+											},
+											{
+												_class = "ExtractMotion"
+												extract_tx = false
+												extract_ty = true
+												extract_tz = true
+												extract_rz = false
+												linear = true
+												quadratic = false
+												root_bone_name = "pelvis"
+												motion_type = "Single"
+											},
+										]
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = false
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/svm@short_climb.fbx"
+										start_frame = 0
+										end_frame = 20
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "Vault"
+										children = 
+										[
+											{
+												_class = "AnimAlign"
+												align_tx = true
+												align_ty = true
+												align_tz = true
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "IdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "pelvis"
+											},
+											{
+												_class = "ExtractMotion"
+												extract_tx = true
+												extract_ty = true
+												extract_tz = false
+												extract_rz = false
+												linear = true
+												quadratic = false
+												root_bone_name = "pelvis"
+												motion_type = "Single"
+											},
+											{
+												_class = "AnimAlign"
+												disabled = true
+												align_tx = true
+												align_ty = true
+												align_tz = true
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "CrouchIdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "pelvis"
+											},
+										]
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = false
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/svm@vault.fbx"
+										start_frame = 0
+										end_frame = 20
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "Hang_Left_Inner"
+										children = 
+										[
+											{
+												_class = "AnimAlign"
+												align_tx = true
+												align_ty = true
+												align_tz = false
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "IdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "pelvis"
+											},
+											{
+												_class = "ExtractMotion"
+												extract_tx = true
+												extract_ty = true
+												extract_tz = true
+												extract_rz = true
+												linear = true
+												quadratic = false
+												root_bone_name = "pelvis"
+												motion_type = "Single"
+											},
+										]
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = true
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/hang/svm@hang_left_inner_c.fbx"
+										start_frame = -1
+										end_frame = 20
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "Hang_Right_Inner"
+										children = 
+										[
+											{
+												_class = "AnimAlign"
+												align_tx = true
+												align_ty = true
+												align_tz = false
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "IdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "pelvis"
+											},
+											{
+												_class = "ExtractMotion"
+												extract_tx = true
+												extract_ty = true
+												extract_tz = true
+												extract_rz = true
+												linear = true
+												quadratic = false
+												root_bone_name = "pelvis"
+												motion_type = "Single"
+											},
+										]
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = true
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/hang/svm@hang_right_inner_c.fbx"
+										start_frame = -1
+										end_frame = 20
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "Hang_Left_Outer"
+										children = 
+										[
+											{
+												_class = "AnimAlign"
+												align_tx = true
+												align_ty = true
+												align_tz = false
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "IdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "pelvis"
+											},
+											{
+												_class = "ExtractMotion"
+												extract_tx = true
+												extract_ty = true
+												extract_tz = true
+												extract_rz = true
+												linear = true
+												quadratic = false
+												root_bone_name = "pelvis"
+												motion_type = "Single"
+											},
+										]
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = true
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/hang/svm@hang_left_outer_c.fbx"
+										start_frame = -1
+										end_frame = 40
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "Hang_Right_Outer"
+										children = 
+										[
+											{
+												_class = "AnimAlign"
+												align_tx = true
+												align_ty = true
+												align_tz = false
+												align_rx = false
+												align_ry = false
+												align_rz = false
+												align_frame_type = "FirstFrame"
+												frame = 0
+												align_to_anim = "IdlePose_Default"
+												align_to_frame_type = "FirstFrame"
+												align_to_frame = 0
+												bone = "pelvis"
+											},
+											{
+												_class = "ExtractMotion"
+												extract_tx = true
+												extract_ty = true
+												extract_tz = true
+												extract_rz = true
+												linear = true
+												quadratic = false
+												root_bone_name = "pelvis"
+												motion_type = "Single"
+											},
+										]
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = true
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/hang/svm@hang_right_outer_c.fbx"
+										start_frame = -1
+										end_frame = 40
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "TestPos"
+										activity_name = ""
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = false
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/SvM@TestPos.fbx"
+										start_frame = -1
+										end_frame = -1
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+								]
+							},
+							{
+								_class = "Folder"
+								name = "Hack"
+								children = 
+								[
+									{
+										_class = "AnimFile"
+										name = "Hack_Low"
+										children = 
+										[
+											{
+												_class = "AnimSmoothLoop"
+												frames_from_start = 3
+												frames_from_end = 3
+											},
+										]
+										activity_name = "ACT_IDLE"
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = true
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/svm@stand_hack_low.fbx"
+										start_frame = -1
+										end_frame = 30
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+									{
+										_class = "AnimFile"
+										name = "Crouch_Hack_Mid"
+										children = 
+										[
+											{
+												_class = "AnimSmoothLoop"
+												frames_from_start = 3
+												frames_from_end = 3
+											},
+										]
+										activity_name = "ACT_IDLE"
+										activity_weight = 1
+										weight_list_name = ""
+										fade_in_time = 0.2
+										fade_out_time = 0.2
+										looping = true
+										delta = false
+										worldSpace = false
+										hidden = false
+										anim_markup_ordered = false
+										disable_compression = false
+										source_filename = "citizen/animations/custom/svm@crouch_hack_mid.fbx"
+										start_frame = -1
+										end_frame = 20
+										framerate = -1.0
+										take = 0
+										reverse = false
+									},
+								]
+							},
+						]
+					},
+				]
+				default_root_bone_name = "pelvis"
+			},
+			{
+				_class = "BoneMarkupList"
+				children = 
+				[
+					{
+						_class = "Prefab"
+						target_file = "models/citizen/prefabs/citizen_bonemarkuplist.vmdl_prefab"
+					},
+				]
+				bone_cull_type = "None"
+			},
+			{
+				_class = "AttachmentList"
+				children = 
+				[
+					{
+						_class = "Prefab"
+						target_file = "models/citizen/prefabs/citizen_attachmentlist.vmdl_prefab"
+					},
+				]
+			},
+			{
+				_class = "PhysicsJointList"
+				children = 
+				[
+					{
+						_class = "Prefab"
+						target_file = "models/citizen/prefabs/citizen_physicsjointlist.vmdl_prefab"
+					},
+				]
+			},
+			{
+				_class = "PhysicsShapeList"
+				children = 
+				[
+					{
+						_class = "Prefab"
+						target_file = "models/citizen/prefabs/citizen_physicsshapelist.vmdl_prefab"
+					},
+				]
+			},
+			{
+				_class = "HitboxSetList"
+				children = 
+				[
+					{
+						_class = "Prefab"
+						target_file = "models/citizen/prefabs/citizen_hitboxsetlist.vmdl_prefab"
+					},
+				]
+			},
+			{
+				_class = "IKData"
+				children = 
+				[
+					{
+						_class = "Prefab"
+						target_file = "models/citizen/prefabs/citizen_ikdata.vmdl_prefab"
+					},
+				]
+			},
+			{
+				_class = "PoseParamList"
+				children = 
+				[
+					{
+						_class = "Prefab"
+						target_file = "models/citizen/prefabs/citizen_poseparamlist.vmdl_prefab"
+					},
+				]
+			},
+			{
+				_class = "WeightListList"
+				children = 
+				[
+					{
+						_class = "Prefab"
+						target_file = "models/citizen/prefabs/citizen_weightlistlist.vmdl_prefab"
+					},
+				]
+			},
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "Prefab"
+						target_file = "models/citizen/prefabs/citizen_gamedatalist.vmdl_prefab"
+					},
+				]
+			},
+			{
+				_class = "BodyGroupList"
+				children = 
+				[
+					{
+						_class = "Prefab"
+						target_file = "models/citizen/prefabs/citizen_bodygrouplist.vmdl_prefab"
+					},
+				]
+			},
+			{
+				_class = "LODGroupList"
+				children = 
+				[
+					{
+						_class = "Prefab"
+						target_file = "models/citizen/prefabs/citizen_lodgrouplist.vmdl_prefab"
+					},
+				]
+			},
+			{
+				_class = "ClothShapeList"
+				children = 
+				[
+					{
+						_class = "Prefab"
+						target_file = "models/citizen/prefabs/citizen_clothshapelist_lower.vmdl_prefab"
+					},
+					{
+						_class = "Prefab"
+						target_file = "models/citizen/prefabs/citizen_clothshapelist_upper.vmdl_prefab"
+					},
+				]
+			},
+		]
+		model_archetype = ""
+		primary_associated_entity = ""
+		anim_graph_name = "models/citizen/svm.vanmgrph"
+		base_model_name = ""
+	}
+}

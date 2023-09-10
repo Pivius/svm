@@ -1,0 +1,48 @@
+﻿@using System;
+@using Sandbox;
+@using Sandbox.UI;
+@using SvM.Ent;
+@using System.Collections.Generic;
+
+@namespace SvM.UI
+@attribute [StyleSheet("/UI/Objectives.scss")]
+@inherits Panel
+
+<root class="objectives">
+	@foreach (ObjectiveEntity objective in ObjectiveEntity.AllObjectives)
+	{
+		if (objective.ObjectiveType != ObjectiveEntity.Flags.Trigger && objective.Interactable && !objective.Finished)
+		{
+			var screenPos = objective.Position.ToScreen() * 100;
+
+			<div class="reticle" style="left: @(screenPos.x)vw; top: @(screenPos.y)vh;">
+				<div class="ret-icon">@Icons[(int)objective.ObjectiveType]</div>
+				<div class="top-right"></div>
+				<div class="bot-left"></div>
+			</div>
+		}
+	}
+</root>
+
+@code
+{
+	public List<ObjectiveEntity> ObjectiveEnts = new();
+	public List<string> Icons = new()
+	{
+		"laptop_windows",
+		"dns",
+		"nest_secure_alarm",
+	};
+
+	public override void Tick()
+	{
+		base.Tick();
+
+	}
+
+	protected override int BuildHash()
+	{
+
+		return HashCode.Combine(Time.Delta.ToString());
+	}
+}

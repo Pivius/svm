@@ -1,0 +1,32 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "code/shaders/thermal.shader"
+
+	g_flDirectionalLightmapMinZ "0.000"
+	g_flDirectionalLightmapStrength "0.000"
+
+	//---- Color ----
+	_Color1 "[0.015686 0.000000 1.000000 0.000000]"
+	_Color2 "[0.000000 0.705882 0.831373 0.000000]"
+	_Color3 "[0.000000 0.313726 0.003922 0.000000]"
+	_Color4 "[0.450980 0.450980 0.000000 0.000000]"
+	_Color5 "[1.000000 0.000000 0.000000 0.000000]"
+
+	//---- Fog ----
+	g_bFogEnabled "1"
+
+	//---- Smoothing ----
+	_CyanSmoothing "1.000"
+	_GreenSmoothing "1.400"
+	_RedSmoothing "1.000"
+	_YellowSmoothing "1.000"
+
+	//---- Threshold ----
+	_BlueThreshold "0.400"
+	_CyanThreshold "0.600"
+	_GreenThreshold "0.700"
+	_RedThreshold "1.000"
+	_YellowThreshold "0.800"
+}

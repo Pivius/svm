@@ -1,0 +1,54 @@
+﻿.reticle {
+    position: absolute;
+    width: 10vh;
+    height: 10vh;
+    transform: translate(-50%, -50%);
+}
+
+.top-left,
+.top-right,
+.bot-left,
+.bot-right {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid transparent;
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+    border-top: 5px solid white;
+    border-left: 5px solid white;
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+    border-top: 5px solid white;
+    border-right: 5px solid white;
+}
+
+.bot-left {
+    bottom: 0;
+    left: 0;
+    border-bottom: 5px solid white;
+    border-left: 5px solid white;
+}
+
+.bot-right {
+    bottom: 0;
+    right: 0;
+    border-bottom: 5px solid white;
+    border-right: 5px solid white;
+}
+
+.ret-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    font-family: Material Icons;
+    color: white;
+}

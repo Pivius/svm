@@ -1,0 +1,107 @@
+{
+  "Title": "Spy vs Merc",
+  "Type": "game",
+  "Org": "pivius",
+  "Ident": "spy_vs_merc",
+  "Tags": "",
+  "Schema": 1,
+  "HasAssets": true,
+  "AssetsPath": "",
+  "ResourcePaths": [],
+  "HasCode": true,
+  "CodePath": "/code/",
+  "Metadata": {
+    "MaxPlayers": 8,
+    "MinPlayers": 1,
+    "GameNetworkType": "Multiplayer",
+    "MapSelect": "Unrestricted",
+    "MapList": [
+      "svm_block"
+    ],
+    "RankType": "None",
+    "PerMapRanking": false,
+    "LeaderboardType": "None",
+    "ProjectTemplate": null,
+    "CsProjName": "",
+    "PackageSettings": [
+      {
+        "DisplayType": "Integer",
+        "Choices": [],
+        "ConVarName": "svm_spy_life",
+        "DisplayName": "Spy lifes",
+        "DefaultValue": "3",
+        "Description": "Amount of lifes the spies has",
+        "Group": "",
+        "Minimum": 1,
+        "Maximum": 10,
+        "Step": 1
+      },
+      {
+        "DisplayType": "Integer",
+        "Choices": [],
+        "ConVarName": "svm_merc_life",
+        "DisplayName": "Merc lifes",
+        "DefaultValue": "2.84276",
+        "Description": "Amount of lifes the mercenaries has.",
+        "Group": "",
+        "Minimum": 1,
+        "Maximum": 10
+      },
+      {
+        "DisplayType": "Integer",
+        "Choices": [],
+        "ConVarName": "svm_game_length",
+        "DisplayName": "Game length",
+        "DefaultValue": "9.66629",
+        "Description": "How long a match should last",
+        "Group": "",
+        "Minimum": 5,
+        "Maximum": 60
+      },
+      {
+        "DisplayType": "Integer",
+        "Choices": [],
+        "ConVarName": "svm_respawn_time",
+        "DisplayName": "Respawn time",
+        "DefaultValue": "9.876698",
+        "Description": "How long it should take to respawn in seconds",
+        "Group": "",
+        "Minimum": 1,
+        "Maximum": 60
+      },
+      {
+        "DisplayType": "Choice",
+        "Choices": [
+          {
+            "Value": "hack",
+            "Name": "Hack"
+          },
+          {
+            "Value": "deathmatch",
+            "Name": "Deathmatch"
+          }
+        ],
+        "ConVarName": "svm_game_mode",
+        "DisplayName": "Gamemode",
+        "DefaultValue": "hack",
+        "Description": "Select a objective gamemode",
+        "Group": ""
+      }
+    ],
+    "ControlModes": {
+      "Keyboard": true
+    },
+    "Physics": {
+      "SubSteps": 1,
+      "TimeScale": 1,
+      "Gravity": "0,0,-800",
+      "AirDensity": 1.2,
+      "SleepingEnabled": true,
+      "SimulationMode": "Continuous",
+      "PositionIterations": 2,
+      "VelocityIterations": 8,
+      "SoftBodyIterations": 1,
+      "SoftBodySubsteps": 1
+    }
+  }
+}

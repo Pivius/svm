@@ -1,0 +1,22 @@
+﻿@using System;
+@using Sandbox;
+@using Sandbox.UI;
+
+@namespace SvM.UI
+@attribute [StyleSheet( "/UI/Hud.scss" )]
+@inherits RootPanel
+
+<root class="hud">
+    @if (!SvMGame.IsGameRunning)
+    {
+        <Menu></Menu>
+    }
+    else
+    {
+        <Objectives></Objectives>
+    }
+</root>
+
+@code
+{
+}

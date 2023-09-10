@@ -1,0 +1,281 @@
+﻿Menu {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(8, 10, 7);
+    color: white;
+    font-family: Lexend;
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    .title {
+        justify-content: center;
+        font-size: 40px;
+        color: rgb(178, 233, 159);
+    }
+
+    .upper-section {
+        height: 35%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(#000,0.1);
+        padding: 10px;
+        margin-top: 1%;
+        border-top: solid 1px rgba(178, 233, 159, 0.3);
+    }
+
+    .left-section {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+        border: solid 1px white;
+        padding: 10px;
+        margin-bottom: auto;
+        border: solid 2px rgba(178, 233, 159, 0.3);
+        min-height: 100%;
+        max-height: 100%;
+        overflow: hidden;
+    }
+
+    .player-list-title {
+        justify-content: center;
+        border-bottom: solid 2px rgba(178, 233, 159, 0.3);
+        font-size: 30px;
+        align-items: center;
+    }
+
+    .player-name, .player-name-ready {
+        font-size: 33px;
+    }
+
+
+    .player-name-ready {
+        color: green;
+    }
+    /* Style for player list */
+    .player-list {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        max-height: 85%;
+        min-height: 85%;
+        overflow: scroll;
+        //border: solid
+    }
+
+    .player-info {
+        justify-content: center;
+        min-height: 20%;
+        max-height: 20%;
+        width: 100%;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+        border-bottom: solid 1px rgba(178, 233, 159, 0.1);
+    }
+
+    .player-info li {
+        font-size: 30px;
+        //border: solid
+    }
+
+    .middle-section {
+        display: flex;
+        width: 25%;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: auto;
+    }
+
+    .middle-section button {
+        margin: 5px;
+        padding: 10px;
+        width: 100%;
+        height: 20%;
+        justify-content: center;
+        font-size: 25px;
+        background-color: rgb(57, 120, 40);
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    .middle-section button:hover {
+        background-color: #3e8e41;
+    }
+
+    .right-section {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+        border: solid 1px white;
+        padding: 10px;
+        margin-bottom: auto;
+        border: solid 2px rgba(178, 233, 159, 0.3);
+        min-height: 100%;
+        max-height: 100%;
+        overflow: hidden;
+    }
+    /* Style for lower section */
+    .lower-section {
+        display: flex;
+        justify-content: space-between;
+        height: 50%;
+        padding: 10px;
+    }
+
+    .lower-section .left-section {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+        border: solid 1px white;
+        padding: 10px;
+        margin-bottom: auto;
+        margin-right: 2%;
+        border: solid 2px rgba(178, 233, 159, 0.3);
+        min-height: 100%;
+        max-height: 100%;
+        overflow: hidden;
+    }
+
+    .lower-section .right-section {
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+        border: solid 1px white;
+        padding: 10px;
+        margin-bottom: auto;
+        border: solid 2px rgba(178, 233, 159, 0.3);
+        min-height: 100%;
+        max-height: 100%;
+        overflow: hidden;
+    }
+
+    .game-settings {
+        justify-content: center;
+        border-bottom: solid 2px rgba(178, 233, 159, 0.3);
+        font-size: 30px;
+    }
+
+    .settings-list {
+        display: flex;
+        flex-direction: column;
+        min-height: 80%;
+        max-height: 80%;
+        margin-bottom: 1%;
+        overflow: scroll;
+    }
+
+    .settings-panel {
+        display: flex;
+        flex-direction: column;
+        border-bottom: solid 2px rgba(178, 233, 159, 0.3);
+        min-height: 25%;
+        max-height: 25%;
+        align-items: center;
+    }
+
+    .settings-name {
+        justify-content: center;
+        font-size: 25px;
+        align-items: center;
+        margin-bottom: 1vh;
+    }
+
+    .sliderentry {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        align-items: center;
+    }
+
+    .slider {
+        height: 0.75vh;
+    }
+
+    .slider .track {
+        width: 100%;
+        background-color: rgb(28, 34, 26);
+    }
+
+    .slider .inner {
+        background-color: rgb(126, 164, 113);
+    }
+
+    .slider .thumb {
+        background-color: rgb(128, 128, 128);
+        position: absolute;
+        height: 2vh;
+        width: 1vh;
+        align-self: center;
+    }
+
+    .dropdown {
+    }
+    /* Style for chat box */
+    .chat-box {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+
+    .chat {
+        display: flex;
+        flex-direction: column;
+        min-height: 80%;
+        max-height: 80%;
+        margin-bottom: 1%;
+        overflow: scroll;
+    }
+
+    .chat-entry {
+        min-height: 15%;
+        max-height: 15%;
+        margin-left: 1%;
+    }
+
+    .name {
+        margin-right: 1%;
+        font-size: 30px;
+        height: 100%;
+        align-items: center;
+    }
+
+    .message {
+        margin-right: 1%;
+        font-size: 25px;
+        height: 100%;
+        align-items: center;
+    }
+
+    .chat-input {
+        display: flex;
+        flex-direction: row;
+        margin-top: auto;
+        border: solid 1px rgba(178, 233, 159, 0.3);
+        height: 20%;
+        align-items: center;
+    }
+
+    .chat-input h1 {
+        font-size: 35px;
+        margin-right: 1%;
+        margin-left: 1%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .chat-input textentry {
+        width: 90%;
+        height: 100%;
+        color: white;
+        font-size: 30px;
+        align-items: center;
+    }
+}
